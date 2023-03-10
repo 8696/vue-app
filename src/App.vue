@@ -1,20 +1,17 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, useRoute } from 'vue-router'
+
+const route = useRoute()
+
 </script>
-
 <template>
-  <div class="nav">
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/about">About</RouterLink>
-    <RouterLink to="/element">Element</RouterLink>
-  </div>
-
   <RouterView />
+  <div v-if="route.name !== 'home'" style="position: fixed; right: 20px; bottom: 20px">
+    <RouterLink to="/">Home</RouterLink>
+  </div>
 </template>
 <style lang="scss" scoped>
-.nav{
-  a{
-    margin-right: 8px;
-  }
+a {
+  color: var(--el-color-primary);
 }
 </style>
