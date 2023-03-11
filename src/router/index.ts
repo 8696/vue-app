@@ -46,6 +46,11 @@ export const routes: RouterOptions['routes'] = [
     path: '/tsx',
     name: 'tsx',
     component: () => import('../views/tsx/TsxView.vue')
+  },
+  {
+    path: '/css-module',
+    name: 'css-module',
+    component: () => import('../views/css-module/CssModule.vue')
   }
 ]
 

@@ -221,8 +221,9 @@ module.exports = {
     // 关闭类型推断检查
     '@typescript-eslint/no-inferrable-types': 'off',
     // 允许出现空函数
-    '@typescript-eslint/no-empty-function': isEnvProduction ? ['error'] : ['warn']
-
+    '@typescript-eslint/no-empty-function': isEnvProduction ? ['error'] : ['warn'],
+    // 允许出现未使用的变量
+    '@typescript-eslint/no-unused-vars': isEnvProduction ? ['error'] : ['warn']
   },
   parserOptions: {
     ecmaVersion: 'latest'

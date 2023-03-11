@@ -2,7 +2,7 @@
 import useGetState from '@/hooks/useGetState'
 import { useMounted } from '@/hooks/useLifecycle'
 
-const [state, setState, getState] = useGetState<string>()
+const [state, setState] = useGetState<string>()
 
 const change = () => {
   setState(Math.random().toString())

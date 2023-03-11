@@ -3,7 +3,6 @@ const json = JSON.stringify(import.meta.env, null, '  ')
 
 console.log(import.meta.env.VITE_APP_GENERATE_SOURCEMAP)
 console.log(import.meta.env.VITE_APP_URL_API)
-
 </script>
 <template>
   <div class="m-view">
@@ -12,6 +11,4 @@ console.log(import.meta.env.VITE_APP_URL_API)
   </div>
 </template>
 
-
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

@@ -12,7 +12,7 @@ export default (props: TProps) => {
   const { name, age = 20, onChange, onAgeChange } = props
   return (
     <>
-      <div class='m-content'>
+      <div class="m-content">
         <div>name: {name}</div>
         <div class={style.title}>age: {age}</div>
       </div>
@@ -21,18 +21,24 @@ export default (props: TProps) => {
           onClick={() => {
             onChange(Math.random().toString())
           }}
-        >change name</ElButton>
+        >
+          change name
+        </ElButton>
         <ElButton
           onClick={() => {
             onAgeChange(age + 1)
           }}
-        >age +1</ElButton>
+        >
+          age +1
+        </ElButton>
         <ElButton
           disabled={age === 0}
           onClick={() => {
             onAgeChange(age - 1)
           }}
-        >age -1</ElButton>
+        >
+          age -1
+        </ElButton>
       </div>
     </>
   )
