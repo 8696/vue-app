@@ -20,9 +20,13 @@
     "ncu:update": "ncu --target minor -u",
     "preview:dist": "pnpm run build && serve -s -u ./dist"
   },
+  "lint-staged": {
+    "src/**/*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}": "pnpm run lint"
+  },
   "dependencies": {
     "element-plus": "^2.2.36",
     "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
     "pinia": "^2.0.33",
     "sass": "^1.59.2",
     "serve": "^14.2.0",
@@ -33,6 +37,8 @@
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
     "@rushstack/eslint-patch": "^1.2.0",
     "@types/jsdom": "^21.1.0",
     "@types/node": "^18.15.0",
