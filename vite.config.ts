@@ -39,6 +39,15 @@ export default defineConfig(({ mode }) => {
     },
     build: {
       sourcemap: getSourcemap(mode, env.VITE_APP_GENERATE_SOURCEMAP)
+    },
+    server: {
+      proxy: {
+        '/api': {
+          target: 'http://proxy.info.icode.link/',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, '')
+        }
+      }
     }
   }
 })

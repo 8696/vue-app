@@ -51,6 +51,11 @@ export const routes: RouterOptions['routes'] = [
     path: '/css-module',
     name: 'css-module',
     component: () => import('../views/css-module/CssModule.vue')
+  },
+  {
+    path: '/http-proxy',
+    name: 'http-proxy',
+    component: () => import('../views/http-proxy/HttpProxyView.vue')
   }
 ]
 
