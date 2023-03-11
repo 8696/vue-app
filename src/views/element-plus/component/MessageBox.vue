@@ -20,4 +20,3 @@ const open = () => {
 <template>
   <el-button type="primary" @click="open">Click to open the Message Box</el-button>
 </template>
-

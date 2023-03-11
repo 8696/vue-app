@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-
 import { useMounted, useBeforeMount } from '@/hooks/useLifecycle'
-
 
 import { ref } from 'vue'
 
@@ -16,7 +14,6 @@ useBeforeMount(() => {
   console.log('useBeforeMount')
   state.value = Math.random().toString()
 })
-
 </script>
 <template>
   <div>state value：{{ state }}</div>

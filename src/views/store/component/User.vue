@@ -16,7 +16,6 @@ const setUserName = () => {
 const clearUser = () => {
   userStore.clearUser()
 }
-
 </script>
 <template>
   <el-button @click="setUser">set user</el-button>

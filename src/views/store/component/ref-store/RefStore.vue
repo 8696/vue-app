@@ -15,7 +15,6 @@ const setUserName = () => {
 const clearUser = () => {
   refStore.clearUser()
 }
-
 </script>
 <template>
   <el-button @click="setUser">set user</el-button>

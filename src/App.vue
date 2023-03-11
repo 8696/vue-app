@@ -2,7 +2,6 @@
 import { RouterLink, useRoute } from 'vue-router'
 
 const route = useRoute()
-
 </script>
 <template>
   <Suspense>
@@ -18,6 +17,4 @@ const route = useRoute()
     <RouterLink to="/">Home</RouterLink>
   </div>
 </template>
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

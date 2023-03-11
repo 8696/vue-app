@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import type { RouterOptions } from 'vue-router'
 import useUserStore from '@/stores/user'
 
-
 export const routes: RouterOptions['routes'] = [
   {
     path: '/',

@@ -1,4 +1,3 @@
-
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { ElMessageBox } from 'element-plus'
@@ -37,9 +36,7 @@ function confirmClick() {
     <el-radio label="btt">bottom to top</el-radio>
   </el-radio-group>
 
-  <el-button type="primary" style="margin-left: 16px" @click="drawer = true">
-    open
-  </el-button>
+  <el-button type="primary" style="margin-left: 16px" @click="drawer = true"> open </el-button>
   <el-button type="primary" style="margin-left: 16px" @click="drawer2 = true">
     with footer
   </el-button>
@@ -58,12 +55,8 @@ function confirmClick() {
     </template>
     <template #default>
       <div>
-        <el-radio v-model="radio1" label="Option 1" size="large"
-        >Option 1</el-radio
-        >
-        <el-radio v-model="radio1" label="Option 2" size="large"
-        >Option 2</el-radio
-        >
+        <el-radio v-model="radio1" label="Option 1" size="large">Option 1</el-radio>
+        <el-radio v-model="radio1" label="Option 2" size="large">Option 2</el-radio>
       </div>
     </template>
     <template #footer>

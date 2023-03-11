@@ -13,7 +13,7 @@ const useUserStore = defineStore('user', () => {
   const setUser = (data: TUser | null): boolean => {
     user.value = data
     return true
-  }   
+  }
 
   const setUserName = (name: TUser['name']): boolean => {
     if (user.value?.name) {
