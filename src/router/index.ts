@@ -13,6 +13,11 @@ export const routes: RouterOptions['routes'] = [
     component: () => import('../views/home/HomeView.vue')
   },
   {
+    path: '/template',
+    name: 'template',
+    component: () => import('../views/template/TemplateView.vue')
+  },
+  {
     path: '/element',
     name: 'element',
     component: () => import('../views/element-plus/ElementPlus.vue')
@@ -31,6 +36,11 @@ export const routes: RouterOptions['routes'] = [
       console.log(userStore.user?.token)
       next()
     }
+  },
+  {
+    path: '/env',
+    name: 'env',
+    component: () => import('../views/env/EnvView.vue')
   }
 ]
 
