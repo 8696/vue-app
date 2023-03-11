@@ -41,6 +41,11 @@ export const routes: RouterOptions['routes'] = [
     path: '/env',
     name: 'env',
     component: () => import('../views/env/EnvView.vue')
+  },
+  {
+    path: '/tsx',
+    name: 'tsx',
+    component: () => import('../views/tsx/TsxView.vue')
   }
 ]
 

@@ -1,5 +1,6 @@
 {
   "files": [],
+  "jsx": "preserve",
   "references": [
     {
       "path": "./tsconfig.node.json"
