@@ -14,8 +14,14 @@
     margin-top: 30px;
     margin-bottom: 20px;
   }
+  .m-content{
+    margin: 0 0 10px 0;
+  }
 }
 hr {
   margin: 10px 0;
   opacity: 0;
+}
+a {
+  color: var(--el-color-primary);
 }

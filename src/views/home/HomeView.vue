@@ -15,8 +15,6 @@ const routeList = routes.filter((item) => item.path && item.name)
   padding: 20px;
   display: flex;
   flex-direction: column;
-  a {
-    color: var(--el-color-primary);
-  }
+
 }
 </style>

@@ -24,9 +24,13 @@ useMounted(() => {
 })
 </script>
 <template>
-  <div>state value: {{ state }}</div>
+  <div class="m-content">
+    <div>state value: {{ state }}</div>
+  </div>
   <el-button @click="change">change</el-button>
   <hr />
-  <div>objState value: {{ objState }}</div>
+  <div class="m-content">
+    <div>objState value: {{ objState }}</div>
+  </div>
   <el-button @click="changeObj">changeObj</el-button>
 </template>

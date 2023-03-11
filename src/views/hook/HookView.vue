@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import State from './component/state.vue'
-import Lifecycle from './component/lifecycle.vue'
+import State from './component/State.vue'
+import Lifecycle from './component/Lifecycle.vue'
 </script>
 <template>
   <div class="m-view">
