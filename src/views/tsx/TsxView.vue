@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import Props from './component/props/Props'
+import Fc from './component/fc/Fc'
+import Render from './component/render/Render'
 import { reactive } from 'vue'
 
 const user = reactive<{ name: string; age?: number }>({
@@ -10,8 +11,8 @@ const user = reactive<{ name: string; age?: number }>({
 
 <template>
   <div class="m-view">
-    <h3>Props</h3>
-    <Props
+    <h3>Fc</h3>
+    <Fc
       :name="user.name"
       :age="user.age"
       :onChange="(name: string) => {
@@ -21,5 +22,7 @@ const user = reactive<{ name: string; age?: number }>({
           user.age = age
         }"
     />
+    <h3>Render</h3>
+    <Render />
   </div>
 </template>

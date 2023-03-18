@@ -3,29 +3,35 @@ import { ref } from 'vue'
 
 type TDispatch<T> = (value: T) => void
 
-type GetStateAction<T> = () => T
+type TPatch<T> = (prevState: T) => T
 
-function useGetState<T>(initialState: T): [Ref<T>, TDispatch<T>, GetStateAction<T>]
+type TSetStateAction<T> = T | TPatch<T>
+
+type TGetStateAction<T> = () => Readonly<T>
+
+function useGetState<T>(
+  initialState: T
+): [Ref<T>, TDispatch<TSetStateAction<T>>, TGetStateAction<T>]
 
 function useGetState<T = undefined>(): [
   Ref<T | undefined>,
-  TDispatch<T | undefined>,
-  GetStateAction<T | undefined>
+  TDispatch<TSetStateAction<T>>,
+  TGetStateAction<T | undefined>
 ]
 
 function useGetState<T>(
   initialState?: T
-): [Ref<T | undefined>, TDispatch<T | undefined>, GetStateAction<T | undefined>] {
+): [Ref<T | undefined>, TDispatch<TSetStateAction<T>>, TGetStateAction<T | undefined>] {
   const state = ref<T>()
 
   state.value = initialState
 
-  const setState = (patch: any) => {
-    state.value = typeof patch === 'function' ? patch(state) : patch
+  const getState = () => {
+    return state.value as T
   }
 
-  const getState = () => {
-    return state.value
+  const setState = (patch: TSetStateAction<T>) => {
+    state.value = typeof patch === 'function' ? (patch as TPatch<T>)(getState()) : patch
   }
 
   return [state, setState, getState]

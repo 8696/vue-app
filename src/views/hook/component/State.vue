@@ -2,19 +2,42 @@
 import useGetState from '@/hooks/useGetState'
 import { useMounted } from '@/hooks/useLifecycle'
 
-const [state, setState] = useGetState<string>()
+const [state, setState, getState] = useGetState<string>()
 
 const change = () => {
-  setState(Math.random().toString())
+  console.log(getState())
+  // setState(Math.random().toString())
+  setState(() => {
+    // prevState = 1
+    return Math.random().toString()
+  })
+  console.log(getState())
 }
+useMounted(() => {
+  setTimeout(() => {
+    // setState(Math.random().toString())
+  }, 3000)
+})
 
-const [objState, setObjState] = useGetState<{ name: string; age?: number }>()
+const [objState, setObjState, getObjState] = useGetState<{ name: string; age?: number }>({
+  name: Math.random().toString()
+})
 
 const changeObj = () => {
-  setObjState({
-    name: Math.random().toString(),
-    age: Math.random()
+  // objState.value.name = '1'
+  console.log(getObjState())
+  // setObjState({
+  //   name: Math.random().toString(),
+  //   age: Math.random()
+  // })
+  setObjState((prevState) => {
+    // prevState.name = 1
+    return {
+      ...prevState,
+      age: Math.random()
+    }
   })
+  console.log(getObjState())
 }
 
 useMounted(() => {
