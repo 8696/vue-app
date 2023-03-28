@@ -24,7 +24,9 @@ function useGetState<T>(
 ): [Ref<T | undefined>, TDispatch<TSetStateAction<T>>, TGetStateAction<T | undefined>] {
   const state = ref<T>()
 
-  state.value = initialState
+  if (initialState !== undefined) {
+    state.value = initialState
+  }
 
   const getState = () => {
     return state.value as T
