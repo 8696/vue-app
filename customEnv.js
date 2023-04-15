@@ -18,30 +18,43 @@ const envCustomList = [
  * 2、数组索引对应的自定义环境列表
  * */
 const envCustomValue = {
-  /** 生成 sourcemap */
-  VITE_APP_GENERATE_SOURCEMAP: [
-    'true',
-    'true',
-    'false'
-  ],
-  /** 请求地址 */
-  VITE_APP_URL_API: [
-    'http://development.com',
-    'http://beta.com',
-    'http://production.com'
-  ]
+  VITE_APP_CURRENT_ENV_FILE: {
+    comment: '当前运行使用env文件名称',
+    values: [
+      '.env.development',
+      '.env.beta',
+      '.env.production'
+    ]
+  },
+  VITE_APP_GENERATE_SOURCEMAP: {
+    comment: '是否生成 sourcemap',
+    values: [
+      'true',
+      'true',
+      'false'
+    ]
+  },
+  VITE_APP_URL_API: {
+    comment: '请求地址',
+    values: [
+      'http://development.com',
+      'http://beta.com',
+      'http://production.com'
+    ]
+  }
 }
 
 const mkdirContent = (envIndex) => {
   let value = ''
   Object.keys(envCustomValue).forEach(key => {
-    value += key + '=' + (envCustomValue[key][envIndex] || 'null') + '\r\n'
+    value += '# ' + envCustomValue[key].comment + '\r\n'
+    value += key + '=' + (envCustomValue[key].values[envIndex] || 'null') + '\r\n\r\n'
   })
   return value
 }
 
 ;(async function() {
-  // 删除 .env.custom.xx 文件
+  // 删除 .env.xx 文件
   const rootPathFileList = require('fs').readdirSync(path.resolve(__dirname, './'))
   for (let i = 0; i < rootPathFileList.length; i++) {
     const file = rootPathFileList[i]
