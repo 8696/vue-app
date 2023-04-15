@@ -14,7 +14,7 @@ const envCustomList = [
 ]
 /**
  * 自定义 ENV 值：
- * 1、REACT_APP_ 开头的可被浏览器读取，可通过 process.env.REACT_APP_xxx 获取
+ * 1、VITE_APP_ 开头的可被浏览器读取，可通过 import.meta.env.VITE_APP_xx 获取
  * 2、数组索引对应的自定义环境列表
  * */
 const envCustomValue = {
